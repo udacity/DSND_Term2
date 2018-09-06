@@ -26,6 +26,4 @@ To install the flask app, you need:
 ## Installing
 
 On a MacOS/linux system, installation is easy. Open a terminal, and go into 
-the directory with the flask app files.  
-
-## TODO Fill out the rest of the instructions
+the directory with the flask app files. Run python worldbank.py in the terminal.
