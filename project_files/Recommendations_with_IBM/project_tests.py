@@ -10,7 +10,7 @@ del df_content['Unnamed: 0']
 
 def sol_1_test(sol_1_dict):
     sol_1_dict_ = {
-    '`50% of individuals interact with ____ number of articles or fewer.`': 3,
+    '`50% of individuals have _____ or fewer interactions.`': 3,
     '`The total number of user-article interactions in the dataset is ______.`': 45993,
     '`The maximum number of user-article interactions by any 1 user is ______.`': 364,
     '`The most viewed article in the dataset was viewed _____ times.`': 937,
@@ -26,7 +26,7 @@ def sol_1_test(sol_1_dict):
     else:
         for k, v in sol_1_dict.items():
             if sol_1_dict_[k] != sol_1_dict[k]:
-                print("Oops! It looks like the value associated with: {} wasn't right. Try again.  It might just be the datatype.  All of the values should be ints except the article_id should be a string.".format(k))
+                print("Oops! It looks like the value associated with: {} wasn't right. Try again.  It might just be the datatype.  All of the values should be ints except the article_id should be a string.  Let each row be considered a separate user-article interaction.  If a user interacts with an article 3 times, these are considered 3 separate interactions.".format(k))
                 
                 
 def sol_2_test(top_articles):
@@ -46,16 +46,14 @@ def sol_2_test(top_articles):
 def sol_5_test(sol_5_dict):
     sol_5_dict_1 = {
     'The user that is most similar to user 1.': 3933, 
-    'The user that is the 10th most similar to user 131': 242,
-    'A list of top 3 recommendations for user 2 by article id': ['1024.0', '833.0', '1186.0'],
-    'A list of top 5 recommendations for user 4459 by article id': ['26.0', '833.0', '339.0', '76.0', '164.0']
+    'The user that is the 10th most similar to user 131': 242
     }
     if sol_5_dict == sol_5_dict_1:
         print("This all looks good!  Nice job!")
         
     else:
-        for k, v in sol_5_dict.items():
-            if sol_5_dict[k] != sol_5_dict_1[k]:
+        for k, v in sol_5_dict_1.items():
+            if set(sol_5_dict[k]) != set(sol_5_dict_1[k]):
                 print("Oops!  Looks like there is a mistake with the {} key in your dictionary.  The answer should be {}.  Try again.".format(k,v))
     
     
