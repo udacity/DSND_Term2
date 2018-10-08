@@ -87,7 +87,7 @@ class Binomial(Distribution):
         
         
         
-    def read_data_file(self, file_name):
+    def replace_stats_with_data(self):
     
         """Function to calculate p and n from the data set
         
@@ -98,25 +98,24 @@ class Binomial(Distribution):
             float: the p value
             float: the n value
     
-        """
+        """        
         
-        
-        # TODO: The read_data_file() from the Distribution class only reads in a data
-        #       file. However, it doesn't update the mean or standard deviation of
-        #       a distribution. Hence you are going to override the read_data_file method()
-        #       from the Distribution class. 
+        # TODO: The read_data_file() from the Generaldistribution class can read in a data
+        #       file. Because the Binomaildistribution class inherits from the Generaldistribution class,
+        #       you don't need to re-write this method. However,  the method
+        #       doesn't update the mean or standard deviation of
+        #       a distribution. Hence you are going to write a method that calculates n, p, mean and
+        #       standard deviation from a data set and then updates the n, p, mean and stdev attributes.
+        #       Assume that the data is a list of zeros and ones like [0 1 0 1 1 0 1]. 
         #
         #       Write code that: 
-        #           reads in a data file
-        #           stores the data in the data attribute
         #           updates the n attribute of the binomial distribution
         #           updates the p value of the binomial distribution by calculating the
         #               number of positive trials divided by the total trials
         #           updates the mean attribute
         #           updates the standard deviation attribute
         #
-        #       Hint: You can copy some of the code from the Distribution class. 
-        #           You can also use the calculate_mean() and calculate_stdev() methods
+        #       Hint: You can use the calculate_mean() and calculate_stdev() methods
         #           defined previously.
         pass
         
@@ -135,7 +134,7 @@ class Binomial(Distribution):
         #       The x-axis should have the value zero or one
         #       The y-axis should have the count of results for each case
         #
-        #       For example, say you have a coin where heads = 1 and tails = 1.
+        #       For example, say you have a coin where heads = 1 and tails = 0.
         #       If you flipped a coin 35 times, and the coin landed on
         #       heads 20 times and tails 15 times, the bar chart would have two bars:
         #       0 on the x-axis and 15 on the y-axis

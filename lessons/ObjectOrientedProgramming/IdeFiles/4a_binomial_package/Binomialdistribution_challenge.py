@@ -33,7 +33,7 @@
         # TODO: Now that you know p and n, you can calculate the mean and standard deviation
         #       You can use the calculate_mean() and calculate_stdev() methods defined below along with the __init__ function from the Distribution class
             
-    # TODO: write a method calculate_mean() accordin to the specifications below
+    # TODO: write a method calculate_mean() according to the specifications below
     
         """Function to calculate the mean from p and n
         
@@ -58,12 +58,28 @@
     
         """
 
-    #TODO: calculate a read_data_file() method according to the specifications below
-    
+    # TODO: write a replace_stats_with_data() method according to the specifications below. The read_data_file() from the Generaldistribution class can read in a data
+    # file. Because the Binomaildistribution class inherits from the Generaldistribution class,
+    # you don't need to re-write this method. However,  the method
+    # doesn't update the mean or standard deviation of
+    # a distribution. Hence you are going to write a method that calculates n, p, mean and
+    # standard deviation from a data set and then updates the n, p, mean and stdev attributes.
+    # Assume that the data is a list of zeros and ones like [0 1 0 1 1 0 1]. 
+    #
+    #       Write code that: 
+    #           updates the n attribute of the binomial distribution
+    #           updates the p value of the binomial distribution by calculating the
+    #               number of positive trials divided by the total trials
+    #           updates the mean attribute
+    #           updates the standard deviation attribute
+    #
+    #       Hint: You can use the calculate_mean() and calculate_stdev() methods
+    #           defined previously.
+
         """Function to calculate p and n from the data set. The function updates the p and n variables of the object.
         
         Args: 
-            file_name (str): name of the file
+            None
         
         Returns: 
             float: the p value
