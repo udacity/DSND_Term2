@@ -67,6 +67,11 @@ class TestBinomialClass(unittest.TestCase):
         stdev = self.binomial.calculate_stdev()
         self.assertEqual(round(stdev,2), 2.19)
         
+    def test_replace_stats_with_data(self):
+        p, n = self.binomial.replace_stats_with_data()
+        self.assertEqual(round(p,3), .615)
+        self.assertEqual(n, 13)
+        
     def test_pdf(self):
         self.assertEqual(round(self.binomial.pdf(5), 5), 0.07465)
         self.assertEqual(round(self.binomial.pdf(3), 5), 0.01235)
