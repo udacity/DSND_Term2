@@ -164,7 +164,7 @@ cat_df = df.select_dtypes(include=['object'])
 cat_df.shape[1]
 #Question 2
 cat_df_dict = {'the number of columns with no missing values': 6,
-               'the number of columns with more than half of the column missing': 50,
+               'the number of columns with more than half of the column missing': 49,
                'the number of columns with more than 75% of the column missing': 13
 }
 #Question 3
