@@ -82,15 +82,8 @@ class Gaussian(Distribution):
 		
 		"""
 			
-		with open(file_name) as file:
-			data_list = []
-			line = file.readline()
-			while line:
-				data_list.append(int(line))
-				line = file.readline()
-		file.close()
-	
-		self.data = data_list
+		Distribution.read_data_file(self, file_name)
+       
 		self.mean = self.calculate_mean()
 		self.stdev = self.calculate_stdev(sample)
 		
