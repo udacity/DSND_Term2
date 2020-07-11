@@ -1,6 +1,7 @@
 # TODO: import necessary libraries
 import math
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 class Binomial(Distributions):
 # TODO: make a Binomial class that inherits from the Distribution class. Use the specifications below.
@@ -129,10 +130,18 @@ class Binomial(Distributions):
         Returns:
             None
         """
-        
+        #x = [0,1]
+        #y = [(1-sel.p)*self.n, sel.p*self.n]
+        plt.hist(self.data, histtype = 'bar', color = 'blue')
+        plt.xlabel('Outcome', fontsize = )
+        plt.ylabel('Frequency')
+        plt.title('Histogram')
+        plt.show()
+
 
 
     #TODO: Calculate the probability density function of the binomial distribution
+    def pdf(self, k):
 
         """Probability density function calculator for the binomial distribution.
 
@@ -144,7 +153,14 @@ class Binomial(Distributions):
             float: probability density function output
         """
 
+        from_n_choose_k = math.factorial(self.n) / (math.factorial(k) * math.factorial(self.n - k))
+        rest = math.pow(self.p, k) * math.pow((1 - k), (self.n - k))
+        output = from_n_choose_k * rest
+        return output
+
     # write a method to plot the probability density function of the binomial distribution
+    def plot_pdf(self):
+
 
         """Function to plot the pdf of the binomial distribution
 
@@ -156,6 +172,21 @@ class Binomial(Distributions):
             list: y values for the pdf plot
 
         """
+        x = []
+        y = []
+
+        for i in range(self.n + 1):
+            x.append(i)
+            y.append(self.pdf(i))
+
+        plt.bar(x,y)
+        plt.xlabel('Outcome')
+        plt.ylabel('Probability')
+        plt.title('Distribution of Outcomes')
+        plt.show()
+
+        return x, y
+
 
         # TODO: Use a bar chart to plot the probability density function from
         # k = 0 to k = n
@@ -169,6 +200,7 @@ class Binomial(Distributions):
         #   The x and y values should be stored in separate lists
 
     # write a method to output the sum of two binomial distributions. Assume both distributions have the same p value.
+    def __sum_binomial__(self, other):
 
         """Function to add together two Binomial distributions with equal p
 
@@ -185,6 +217,15 @@ class Binomial(Distributions):
         except AssertionError as error:
             raise
 
+            result = Binomial()
+            result.n = self.n + other.n
+            result.p = self.p
+            result.mean = calculate_mean()
+            result.stdev = calculate_stdev()
+
+            return result
+
+
         # TODO: Define addition for two binomial distributions. Assume that the
         # p values of the two distributions are the same. The formula for
         # summing two binomial distributions with different p values is more complicated,
@@ -197,6 +238,7 @@ class Binomial(Distributions):
 
     # use the __repr__ magic method to output the characteristics of the binomial distribution object.
 
+    def __repr__(self):
         """Function to output the characteristics of the Binomial instance
 
         Args:
@@ -206,11 +248,10 @@ class Binomial(Distributions):
             string: characteristics of the Binomial object
 
         """
+        return "mean {}, standard deviation {}, p {}, n {}".format(self.mean, self.stdev, self.p, self.n)
 
         # TODO: Define the representation method so that the output looks like
         #       mean 5, standard deviation 4.5, p .8, n 20
         #
         #       with the values replaced by whatever the actual distributions values are
         #       The method should return a string in the expected format
-
-        pass
