@@ -1,2 +1,2 @@
 from .Gaussiandistribution import Gaussian
-from .Binomaildistribution_challenge import Binomial
+from .Binomialdistribution_challenge import Binomial

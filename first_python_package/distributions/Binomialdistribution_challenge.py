@@ -1,9 +1,10 @@
 # TODO: import necessary libraries
 import math
 import matplotlib.pyplot as plt
+from .Generaldistribution import Distribution
 import seaborn as sns
 
-class Binomial(Distributions):
+class Binomial(Distribution):
 # TODO: make a Binomial class that inherits from the Distribution class. Use the specifications below.
     """ Binomial distribution class for calculating and
     visualizing a Binomial distribution.
@@ -37,14 +38,14 @@ class Binomial(Distributions):
         # TODO: Now that you know p and n, you can calculate the mean and standard deviation
         #       You can use the calculate_mean() and calculate_stdev() methods defined below along with the __init__ function from the Distribution class
 
-        def __init__(self, probability, number_of_trial):
+    def __init__(self, probability = 5, number_of_trials = 20):
 
-            self.p = probability
-            self.n = number_of_trials
-            Distributions.__init__(self, mu = self.calculate_mean() , sigma = self.calculate_stdev())
+        self.p = probability
+        self.n = number_of_trials
+        Distribution.__init__(self, mu = self.calculate_mean() , sigma = self.calculate_stdev())
 
     # TODO: write a method calculate_mean() according to the specifications below
-        def calculate_mean(self):
+    def calculate_mean(self):
         """Function to calculate the mean from p and n
 
         Args:
@@ -53,13 +54,13 @@ class Binomial(Distributions):
         Returns:
             float: mean of the data set
 
-        """
+            """
         self.mean = self.p * self.n
         return self.mean
 
 
     #TODO: write a calculate_stdev() method accordin to the specifications below.
-        def calculate_stdev(self):
+    def calculate_stdev(self):
         """Function to calculate the standard deviation from p and n.
 
         Args:
@@ -89,7 +90,7 @@ class Binomial(Distributions):
     #
     #       Hint: You can use the calculate_mean() and calculate_stdev() methods
     #           defined previously.
-        def replace_stats_with_data(self):
+    def replace_stats_with_data(self):
         """Function to calculate p and n from the data set. The function updates the p and n variables of the object.
 
         Args:
@@ -102,8 +103,8 @@ class Binomial(Distributions):
         """
         self.n = float(len(self.data))
         self.p = float(sum(self.data)/len(self.data))
-        self.mean = calculate_mean()
-        self.stdev = calculate_stdev()
+        self.mean = self.calculate_mean()
+        self.stdev = self.calculate_stdev()
 
         return self.p, self.n
 
@@ -120,7 +121,7 @@ class Binomial(Distributions):
     #       1 on the x-axis and 20 on the y-axis
 
     #       Make sure to label the chart with a title, x-axis label and y-axis label
-        def plot_bar(self):
+    def plot_bar(self):
         """Function to output a histogram of the instance variable data using
         matplotlib pyplot library.
 
@@ -133,9 +134,9 @@ class Binomial(Distributions):
         #x = [0,1]
         #y = [(1-sel.p)*self.n, sel.p*self.n]
         plt.hist(self.data, histtype = 'bar', color = 'blue')
-        plt.xlabel('Outcome', fontsize = )
-        plt.ylabel('Frequency')
-        plt.title('Histogram')
+        plt.xlabel('Outcome', fontsize = 12)
+        plt.ylabel('Frequency', fontsize = 12)
+        plt.title('Histogram', fontsize = 12)
         plt.show()
 
 
@@ -153,14 +154,13 @@ class Binomial(Distributions):
             float: probability density function output
         """
 
-        from_n_choose_k = math.factorial(self.n) / (math.factorial(k) * math.factorial(self.n - k))
-        rest = math.pow(self.p, k) * math.pow((1 - k), (self.n - k))
+        from_n_choose_k = math.factorial(self.n) / (math.factorial(k) * (math.factorial(self.n - k)))
+        rest = math.pow(self.p, k) * math.pow((1 - self.p), (self.n - k))
         output = from_n_choose_k * rest
         return output
 
     # write a method to plot the probability density function of the binomial distribution
     def plot_pdf(self):
-
 
         """Function to plot the pdf of the binomial distribution
 
@@ -200,7 +200,7 @@ class Binomial(Distributions):
         #   The x and y values should be stored in separate lists
 
     # write a method to output the sum of two binomial distributions. Assume both distributions have the same p value.
-    def __sum_binomial__(self, other):
+    def __binomial_sum__(self, other):
 
         """Function to add together two Binomial distributions with equal p
 
@@ -220,8 +220,8 @@ class Binomial(Distributions):
             result = Binomial()
             result.n = self.n + other.n
             result.p = self.p
-            result.mean = calculate_mean()
-            result.stdev = calculate_stdev()
+            result.mean = result.calculate_mean()
+            result.stdev = result.calculate_stdev()
 
             return result
 
