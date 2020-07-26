@@ -92,8 +92,8 @@ class Gaussian():
         file.close()
     
         self.data = data_list
-        self.mean = self.calculate_mean()
-        self.stdev = self.calculate_stdev(sample)
+        self.calculate_mean()
+        self.calculate_stdev(sample)
         
         
     def plot_histogram(self):
