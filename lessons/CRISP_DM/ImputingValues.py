@@ -43,7 +43,9 @@ def r2_y_test_check(rsquared_score, length_y_test):
 
     Prints statement related to the correctness of the rsquared_score and length_y_test
     '''
-    if rsquared_score == s.rsquared_score and length_y_test == s.length_y_test:
+    len_decimals = 14
+    
+    if round(rsquared_score, len_decimals) == round(s.rsquared_score, len_decimals) and length_y_test == s.length_y_test:
         print("Nice job! That looks right!")
     else:
         print("That wasn't quite as expected.  Try the steps again, and feel free to use the steps at the top of this notebook to help you out if you get stuck.")
