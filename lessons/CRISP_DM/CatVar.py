@@ -27,6 +27,7 @@ def cat_df_dict_check(cat_df_dict):
 
     Prints statement related to the correctness of the solution of the dictionary
     '''
+
     if cat_df_dict == s.cat_df_dict:
         print('Nice job! That looks right to me!')
     else:
@@ -61,4 +62,25 @@ def dummy_cols_df_check(dummy_cols_df):
     else:
         print("That wasn't quite as expected.  Your input should just be the 3 columns resulting as dummy variables.  One column for a, one for b, and one for the nan values.")
 
+#Question 5
+def create_dummy_df_check(df_new):
+    '''
+    INPUT
+    df_new - a pandas dataframe returned by create_dummy_df(df, cat_cols_lst, dummy_na=False)
+
+    It should contain these four characteristics
+        1. contains all columns that were not specified as categorical
+        2. removes all the original columns in cat_cols
+        3. dummy columns for each of the categorical columns in cat_cols
+        4. if dummy_na is True - it also contains dummy columns for the NaN values
+        5. Use a prefix of the column name with an underscore (_) for separating 
+
+
+    Prints statement related to the correctness of the dataframe provided.
+    '''
+    if set(df_new.columns).difference(s.df_new.columns) == set():
+        print("Nice job! This passes the simple tests I built!  It is a good idea to do a spot check yourself as well.")
+    else:
+        print("Looks like there is a difference due to these columns not matching: {}".format(set(df_new.columns).difference(s.df_new.columns)))
+        print("That wasn't quite as expected.  Make sure your dataframe has these 4 characteristics:   1. contains all columns that were not specified as categorical 2. removes all the original columns in cat_cols 3. dummy columns for each of the categorical columns in cat_cols 4. if dummy_na is True - it also contains dummy columns for the NaN values 5. Use a prefix of the column name with an underscore (_) for separating ")
 
