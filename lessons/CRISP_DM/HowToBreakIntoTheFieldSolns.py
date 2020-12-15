@@ -23,7 +23,7 @@ def get_description(schema, column_name):
 descrips = set(get_description(schema, col) for col in df.columns)
 
 # Solution to Question 4
-higher_ed = lambda x: 1 if x in ("Master's degree", "Doctoral", "Professional degree") else 0
+higher_ed = lambda x: 1 if x in ("Master's degree", "Doctoral degree", "Professional degree") else 0
 
 df['HigherEd'] = df["FormalEducation"].apply(higher_ed)
 higher_ed_perc = df['HigherEd'].mean()
