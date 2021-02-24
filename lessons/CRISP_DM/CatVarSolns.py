@@ -11,12 +11,11 @@ schema = pd.read_csv('./survey_results_schema.csv')
 ##Categorical Variables
 # Question 1
 cat_df = df.select_dtypes(include=['object'])
-cat_df.shape[1]
 #Question 2
 cat_df_dict = {'the number of columns with no missing values': 6,
                'the number of columns with more than half of the column missing': 49,
                'the number of columns with more than 75% of the column missing': 13
-}
+              }
 #Question 3
 sol_3_dict = {'Which column should you create a dummy variable for?': 'col1',
               'When you use the default settings for creating dummy variables, how many are created?': 2,

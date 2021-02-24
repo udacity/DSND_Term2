@@ -523,7 +523,7 @@ def cat_df_check(cat_df):
 
     Prints statement related to the correctness of the dataframe provided.
     '''
-    if cat_df.equals(s.cat_df):
+    if cat_df.shape[1] == s.cat_df.shape[1]:
         print("Nice job! That looks right!")
     else:
         print("That wasn't quite as expected.  The input cat_df variable should be a dataframe of all of the categorical variables.  You can use select_dtypes to select the 'object' data type.")
@@ -535,7 +535,13 @@ def cat_df_dict_check(cat_df_dict):
 
     Prints statement related to the correctness of the solution of the dictionary
     '''
-    if cat_df_dict == s.cat_df_dict:
+    x = {'the number of columns with no missing values': 6,
+         'the number of columns with more than half of the column missing': 49,
+         'the number of columns with more than 75% of the column missing': 13
+        }
+
+#     if cat_df_dict == s.cat_df_dict:
+    if cat_df_dict == x:
         print('Nice job! That looks right to me!')
     else:
         print("Oops! One or more of those doesn't look quite right.  Each value should be an integer corresponding to the number of columns described.")
