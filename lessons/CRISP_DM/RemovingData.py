@@ -74,7 +74,7 @@ def r2_test_check(r2_test):
 
     Prints statement related to the correctness rsquared matching solution.
     '''
-    if r2_test == s.r2_test:
+    if abs(r2_test - s.r2_test) <= 1e-9:
         print("Nice job! That's right! Your rsquared matches the solution.")
     else:
         print("Oops!  That wasn't the value that was expected.  You should fit your model using the training data, predict on the X_test data, and then score comparing the y_test and your predicted values.")
