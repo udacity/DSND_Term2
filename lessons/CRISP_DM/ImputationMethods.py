@@ -52,9 +52,9 @@ def impute_q4_check(impute_q4):
     b = "Imputes the mode."
 
 
-    impute_q4_1 = {'Filling column A': b,
+    impute_q4_1 = {'Filling column A': a,
                  'Filling column D': a,
-                 'Filling column E': a}
+                 'Filling column E': b}
 
     
     if impute_q4 == impute_q4_1:
