@@ -10,7 +10,7 @@ itsdangerous==0.24
 Jinja2==2.10
 jsonschema==2.6.0
 jupyter-core==4.4.0
-MarkupSafe==1.0
+MarkupSafe==1.1.1
 nbformat==4.4.0
 numpy==1.14.3
 pandas==0.22.0
