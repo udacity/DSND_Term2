@@ -17,7 +17,9 @@ h1 {
 - make the Udacity logo only half the width of the screen
 hint: https://www.w3schools.com/css/css_dimension.asp
 */
-
+img {
+  width: 50%;
+}
 /* TODO: Udacity link 
 - make the Udacity link on its own line instead of next to the image
 - give the link a top and bottom margin of 20px
