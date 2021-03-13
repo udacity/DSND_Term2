@@ -1,11 +1,18 @@
 /* TODO:
 - add a left margin of 25px and a right margin of 25px to the body tag */
-
+body {
+  margin-left: 25px;
+  margin-right: 25px;
+}
 /* TODO: h1 header
 - change the h1 header to all capital letters 
 - add a top and bottom margin of 20px
-hint: https://www.w3schools.com/cssref/pr_text_text-transform.asp*/ 
-
+hint: https://www.w3schools.com/cssref/pr_text_text-transform.asp*/
+h1 {
+  margin-top: 20;
+  margin-bottom: 20;
+  text-transform: uppercase;
+}
 /* TODO: img
 - make the Udacity logo only half the width of the screen
 hint: https://www.w3schools.com/css/css_dimension.asp
@@ -32,7 +39,6 @@ hint: the block value might be of interest
 https://www.w3schools.com/cssref/pr_class_display.asp
 hint: make sure to specify the Udacity link using the id; otherwise all links will be styled like the Udacity link
 */
-
 
 /* TODO: Div main-content id
 - change the font of all elements inside the #main-content div to helvetica
