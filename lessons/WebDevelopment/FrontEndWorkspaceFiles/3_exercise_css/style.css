@@ -30,28 +30,36 @@ hint: the block value might be of interest
 https://www.w3schools.com/cssref/pr_class_display.asp
 hint: make sure to specify the Udacity link using the id; otherwise all links will be styled like the Udacity link
 */
-
-/* TODO: Udacity link 
-- make the Udacity link on its own line instead of next to the image
-- give the link a top and bottom margin of 20px
-- remove the underline
-- increase the font to 45px
-- change the font color to gray
-hint: the block value might be of interest
-https://www.w3schools.com/cssref/pr_class_display.asp
-hint: make sure to specify the Udacity link using the id; otherwise all links will be styled like the Udacity link
-*/
+a#main-link {
+  display: block;
+  margin-top: 20;
+  margin-bottom: 20;
+  font-size: 45px;
+  color: dimgrey;
+}
 
 /* TODO: Div main-content id
 - change the font of all elements inside the #main-content div to helvetica
 hint: https://www.w3schools.com/cssref/pr_font_font-family.asp
 */
-
+div#main-content {
+  font-family: Helvetica;
+}
 /* TODO: bold-paragraph class
 - for the paragraphs with the bold-paragraph class, make the text bold
 */
-
+p.bold-paragraph {
+  font-weight: bold;
+}
 /* TODO: table
 - draw a black border around the td elements in the table
 hint: https://www.w3schools.com/css/css_border.asp
 */
+td {
+  border: solid black 1px;
+}
+/*TODO make name green */
+
+#green-first-name {
+  color: green;
+}
