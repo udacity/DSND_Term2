@@ -11,3 +11,8 @@ Write jQuery code that does the following:
 - hint: Don't forget to write code that waits for the html document to load. Re-watch the javascript screencast if you're stuck.
 */
 
+$(document).ready(function () {
+  $('#fade_in_tasks').click(function () {
+    $('ul').fadeIn()
+  })
+})
