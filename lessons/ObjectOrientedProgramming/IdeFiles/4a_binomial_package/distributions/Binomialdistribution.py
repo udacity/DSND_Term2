@@ -34,8 +34,8 @@ class Binomial(Distribution):
     def __init__(self, prob=.5, size=20):
         self.p = prob
         self.n = size
-        mean = self.calulate_mean(self)
-        stdev = self.calculate_stdev(self)
+        mean = self.calculate_mean()
+        stdev = self.calculate_stdev()
 
         Distribution.__init__(self, mean, stdev)
         # TODO: store the probability of the distribution in an instance variable p
@@ -104,10 +104,12 @@ class Binomial(Distribution):
             float: the n value
 
         """
-        self.n = len(self.data_list)
-        self.p = sum(self.data_list) / self.n
-        self.mean = self.calculate_mean(self)
-        self.stdev = self.calculate_stdev(self)
+        self.n = len(self.data)
+        self.p = sum(self.data) / self.n
+        self.mean = self.calculate_mean()
+        self.stdev = self.calculate_stdev()
+
+        return self.p, self.n
 
         # TODO: The read_data_file() from the Generaldistribution class can read in a data
         #       file. Because the Binomaildistribution class inherits from the Generaldistribution class,
@@ -153,7 +155,7 @@ class Binomial(Distribution):
         plt.bar([0,1], [self.n - ones, ones], tick_label = ['Failure', 'Success'])
         plt.title('Histogram of Data')
 		# plt.xlabel('Data')
-		plt.ylabel('Count')
+		# plt.ylabel('Count')
 
     def pdf(self, k):
         """Probability density function calculator for the gaussian distribution.
