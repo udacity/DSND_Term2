@@ -39,7 +39,7 @@ jobs:
            PR no. ${{ github.event.pull_request.number }} 
            PR title: ${{ github.event.pull_request.title }}  
            PR description: ${{ github.event.pull_request.description }}  
-           In addition, please resolve other issues, if any. See a sample responses here: https://github.com/udacity/pdsnd_github/pull/291 and close the PR. 
+           In addition, please resolve other issues, if any. 
         fields: '{"components": [{"name":"nd025 - Data Scientist ND"}], "customfield_16449":"https://classroom.udacity.com/nanodegrees/nd104/parts/912d84b6-bf81-4311-8e00-b3b2f63dc965/modules/07253c48-aa80-4701-8acf-3629088e2d98/lessons/e9652698-f014-4e98-b9dc-c89a868d9860/concepts/f7ab906b-d9e1-4444-806d-3e8d90324598", "customfield_16450":"Resolve the PR", "labels": ["github"], "priority":{"id": "4"}}'
 
     - name: Log created issue
