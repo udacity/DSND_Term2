@@ -144,7 +144,7 @@ class Binomial(Distribution):
         pass        
         
     def pdf(self, k):
-        """Probability density function calculator for the gaussian distribution.
+        """Probability density function calculator for the binomial distribution.
         
         Args:
             k (float): point for calculating the probability density function
