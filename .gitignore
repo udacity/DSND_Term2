@@ -5,6 +5,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# package local venv
+**/*.venv
+
 # C extensions
 *.so
 
