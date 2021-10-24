@@ -6,7 +6,7 @@ __pycache__/
 *$py.class
 
 # package local venv
-**/*.venv
+dataeng
 
 # C extensions
 *.so
