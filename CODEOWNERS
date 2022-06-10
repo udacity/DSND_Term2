@@ -1,1 +1,0 @@
-*           @udacity/active-public-content
