@@ -2,14 +2,14 @@ import numpy as np
 import pandas as pd
 
 def q1_check(input_dict):
-    a = 53968
+    a = 8022
     b = 10
     c = 7
-    d = 31245
+    d = 35479
     e = 15
     f = 0
     g = 4
-    h = 712337
+    h = 100001
     i = 28
 
     dict_sol1 = {
